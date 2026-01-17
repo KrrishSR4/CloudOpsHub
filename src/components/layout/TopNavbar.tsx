@@ -1,4 +1,5 @@
 import { Bell, ChevronDown, User } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,6 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 const environments = ["Production", "Staging", "Development"];
 const projects = ["cloudops-api", "frontend-app", "data-pipeline"];
@@ -47,6 +49,19 @@ export function TopNavbar() {
       </div>
 
       <div className="flex items-center gap-3">
+        {/* Sign Up Button */}
+        <Link to="/signup">
+          <Button variant="outline" size="sm">
+            Sign Up
+          </Button>
+        </Link>
+        {/* Login Button */}
+        <Link to="/login">
+          <Button size="sm">
+            Login
+          </Button>
+        </Link>
+
         {/* Notifications */}
         <button className="relative p-2 text-muted-foreground hover:text-foreground hover:bg-secondary rounded transition-colors">
           <Bell size={18} />
